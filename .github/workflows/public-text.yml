@@ -1,0 +1,11 @@
+name: Public text and DCO
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, edited]
+permissions:
+  contents: read
+jobs:
+  public-text:
+    uses: citrustudio/.github/.github/workflows/public-text.yml@286fd68b8549902dfb7ba3a114baa19d9d36a758
+    secrets:
+      PUBLIC_TEXT_DENY: ${{ secrets.PUBLIC_TEXT_DENY }}
